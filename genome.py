@@ -16,12 +16,12 @@ class Genome:
         if p():
             self.brightness_max_delta = np.random.uniform(0, 0.5)
         if p():
-            self.contrast_lower = 0
+            self.contrast_lower = np.random.uniform(0,1)
             self.contrast_upper = np.random.uniform(self.contrast_lower, 1)
         if p():
             self.hue_max_delta = np.random.uniform(0, 0.5)
         if p():
-            self.saturation_lower = 0
+            self.saturation_lower = np.random.uniform(0,1)
             self.saturation_upper = np.random.uniform(self.saturation_lower, 1)
         if p():
             self.log_lr_1 = np.random.uniform(-2, 0)
