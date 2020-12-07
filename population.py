@@ -7,8 +7,8 @@ class Population:
         self.individuals = [[Genome() for i in range(size)]]
         self.evaluations = []
 
-    def generation(self, mutation_rate):
-        evaluation = [g.evaluate() for g in self.individuals[-1]]
+    def generation(self, mutation_rate, train_func):
+        evaluation = [g.evaluate(train_func) for g in self.individuals[-1]]
         self.evaluations.append(evaluation)
         
         best_individual = np.argmax(evaluation)

@@ -51,9 +51,9 @@ class Genome:
             return im, lbl
         return augment
 
-    def evaluate(self):
+    def evaluate(self, train_func):
         if self.score == None:
-            self.score = train.train_model(self)
+            self.score = train_func(self)
         return self.score
 
     def save(self, filename):
