@@ -48,7 +48,8 @@ class Genome:
             im = tf.image.random_contrast(im, self.contrast_lower, self.contrast_upper)
             im = tf.image.random_hue(im, self.hue_max_delta)
             im = tf.image.random_saturation(im, self.saturation_lower, self.saturation_upper)
-        return augment, lbl
+            return im, lbl
+        return augment
 
     def evaluate(self):
         if self.score == None:
