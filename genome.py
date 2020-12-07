@@ -71,7 +71,7 @@ def crossover(a, b):
     halves = ['brightness_max_delta', 'contrast_lower', 'contrast_upper', 'hue_max_delta', 'saturation_lower', 'saturation_upper', 'log_lr_1', 'log_lr_2', 'neg_log_momentum', 'dropout', 'log_l2']
     c.crop_size = (a.crop_size + b.crop_size) // 2
     for key in halves:
-        c.__dict__[key] = a.__dict__[key] + b.__dict__[key]
+        c.__dict__[key] = (a.__dict__[key] + b.__dict__[key]) / 2
 
     c.lr1 = 10**c.log_lr_1
     c.lr2 = 10**c.log_lr_2
