@@ -36,6 +36,8 @@ class Genome:
         if p():
             self.log_l2 = np.random.uniform(-5, -1)
             self.l2 = 10**self.log_l2
+        if p():
+            self.smoothing = np.random.uniform(0,0.2)
 
     def get_augment(self):
         def augment(im, lbl):
@@ -68,7 +70,7 @@ class Genome:
 def crossover(a, b):
     c = Genome()
     
-    halves = ['brightness_max_delta', 'contrast_lower', 'contrast_upper', 'hue_max_delta', 'saturation_lower', 'saturation_upper', 'log_lr_1', 'log_lr_2', 'neg_log_momentum', 'dropout', 'log_l2']
+    halves = ['brightness_max_delta', 'contrast_lower', 'contrast_upper', 'hue_max_delta', 'saturation_lower', 'saturation_upper', 'log_lr_1', 'log_lr_2', 'neg_log_momentum', 'dropout', 'log_l2', 'smoothing']
     c.crop_size = (a.crop_size + b.crop_size) // 2
     for key in halves:
         c.__dict__[key] = (a.__dict__[key] + b.__dict__[key]) / 2
