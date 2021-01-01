@@ -29,7 +29,7 @@ class Genome:
             self.log_lr_2 = np.random.uniform(-4, self.log_lr_1)
             self.lr2 = 10**self.log_lr_2
         if p():
-            self.neg_log_momentum = np.random.uniform(-5, -1)
+            self.neg_log_momentum = np.random.uniform(-2, 0)
             self.momentum = 1 - 10**self.neg_log_momentum
         if p():
             self.dropout = np.random.uniform(0, 0.5)
