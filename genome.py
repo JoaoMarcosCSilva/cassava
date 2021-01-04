@@ -1,6 +1,7 @@
 import numpy as np
 import json
 import tensorflow as tf
+import tensorflow_addons as tfa
 
 class Genome:
     def __init__(self):
